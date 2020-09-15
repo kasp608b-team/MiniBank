@@ -1,6 +1,8 @@
-﻿namespace BE
+﻿using MiniBank.Core.Entities.BE.Interfaces;
+
+namespace MiniBank.Core.Entities.BE.Implementations
 {
-    public class Customer
+    public class Customer : ICustomer
     {
         public int CustomerNumber { get; set; }
         public string Name { get; set; }
