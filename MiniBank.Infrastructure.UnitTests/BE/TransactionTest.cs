@@ -8,14 +8,14 @@ namespace MiniBank.Infrastructure.UnitTests.BE
     public class TransactionTest
     {
         [Fact]
-        public void AccountNumberSetGetTest()
+        public void AccountNumberGetTest()
         {
             //Arrange 
-            ITransaction transaction = new Transaction();
             int expectedId = 1;
+            ITransaction transaction = new Transaction(expectedId, DateTime.Now, "test", 10, 1);
 
             //Act 
-            transaction.TransactionId = expectedId;
+            
 
             //Assert
             Assert.Equal(expectedId, transaction.TransactionId);
@@ -25,11 +25,10 @@ namespace MiniBank.Infrastructure.UnitTests.BE
         public void DateTimeOfTransactionSetGetTest()
         {
             //Arrange 
-            ITransaction transaction = new Transaction();
             DateTime expectedDateTime = DateTime.Now;
+            ITransaction transaction = new Transaction(1, expectedDateTime, "test", 10, 1);
 
             //Act 
-            transaction.DateTimeOfTransaction = expectedDateTime;
 
             //Assert
             Assert.Equal(expectedDateTime, transaction.DateTimeOfTransaction);
@@ -39,11 +38,10 @@ namespace MiniBank.Infrastructure.UnitTests.BE
         public void MessageSetGetTest()
         {
             //Arrange 
-            ITransaction transaction = new Transaction();
             string expectedMessage = "test message";
+            ITransaction transaction = new Transaction(1, DateTime.Now, expectedMessage, 10, 1);
 
             //Act 
-            transaction.Message = expectedMessage;
 
             //Assert
             Assert.Equal(expectedMessage, transaction.Message);
@@ -53,11 +51,10 @@ namespace MiniBank.Infrastructure.UnitTests.BE
         public void AmountSetGetTest()
         {
             //Arrange 
-            ITransaction transaction = new Transaction();
             int expectedAmount = 25;
+            ITransaction transaction = new Transaction(1, DateTime.Now, "test", expectedAmount, 1);
 
             //Act 
-            transaction.Amount = expectedAmount;
 
             //Assert
             Assert.Equal(expectedAmount, transaction.Amount);
@@ -67,11 +64,10 @@ namespace MiniBank.Infrastructure.UnitTests.BE
         public void ForeignKeyAccountNumberSetGetTest()
         {
             //Arrange 
-            ITransaction transaction = new Transaction();
             int expectedForeignKeyAccountNumber = 1;
+            ITransaction transaction = new Transaction(1, DateTime.Now, "test", 10, expectedForeignKeyAccountNumber);
 
             //Act 
-            transaction.ForeignKeyAccountNumber = expectedForeignKeyAccountNumber;
 
             //Assert
             Assert.Equal(expectedForeignKeyAccountNumber, transaction.ForeignKeyAccountNumber);
