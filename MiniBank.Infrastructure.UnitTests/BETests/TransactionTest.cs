@@ -3,7 +3,7 @@ using MiniBank.Core.Entities.BE.Implementations;
 using MiniBank.Core.Entities.BE.Interfaces;
 using Xunit;
 
-namespace MiniBank.Infrastructure.UnitTests.BE
+namespace MiniBank.Infrastructure.UnitTests.BETests
 {
     public class TransactionTest
     {
@@ -12,10 +12,10 @@ namespace MiniBank.Infrastructure.UnitTests.BE
         {
             //Arrange 
             int expectedId = 1;
-            ITransaction transaction = new Transaction(expectedId, DateTime.Now, "test", 10, 1);
+            ITransaction transaction = new Transaction();
 
             //Act 
-            
+            transaction.TransactionId = expectedId;
 
             //Assert
             Assert.Equal(expectedId, transaction.TransactionId);
@@ -26,9 +26,10 @@ namespace MiniBank.Infrastructure.UnitTests.BE
         {
             //Arrange 
             DateTime expectedDateTime = DateTime.Now;
-            ITransaction transaction = new Transaction(1, expectedDateTime, "test", 10, 1);
+            ITransaction transaction = new Transaction();
 
             //Act 
+            transaction.DateTimeOfTransaction = expectedDateTime;
 
             //Assert
             Assert.Equal(expectedDateTime, transaction.DateTimeOfTransaction);
@@ -39,9 +40,10 @@ namespace MiniBank.Infrastructure.UnitTests.BE
         {
             //Arrange 
             string expectedMessage = "test message";
-            ITransaction transaction = new Transaction(1, DateTime.Now, expectedMessage, 10, 1);
+            ITransaction transaction = new Transaction();
 
             //Act 
+            transaction.Message = expectedMessage;
 
             //Assert
             Assert.Equal(expectedMessage, transaction.Message);
@@ -52,25 +54,27 @@ namespace MiniBank.Infrastructure.UnitTests.BE
         {
             //Arrange 
             int expectedAmount = 25;
-            ITransaction transaction = new Transaction(1, DateTime.Now, "test", expectedAmount, 1);
+            ITransaction transaction = new Transaction();
 
             //Act 
+            transaction.Amount = expectedAmount;
 
             //Assert
             Assert.Equal(expectedAmount, transaction.Amount);
         }
 
         [Fact]
-        public void ForeignKeyAccountNumberSetGetTest()
+        public void BankAccountSetGetTest()
         {
             //Arrange 
-            int expectedForeignKeyAccountNumber = 1;
-            ITransaction transaction = new Transaction(1, DateTime.Now, "test", 10, expectedForeignKeyAccountNumber);
+            BankAccount expectedBankAccount = new BankAccount();
+            ITransaction transaction = new Transaction();
 
             //Act 
+            transaction.BankAccount = expectedBankAccount;
 
             //Assert
-            Assert.Equal(expectedForeignKeyAccountNumber, transaction.ForeignKeyAccountNumber);
+            Assert.Equal(expectedBankAccount, transaction.BankAccount);
         }
 
     }

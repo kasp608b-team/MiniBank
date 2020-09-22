@@ -1,23 +1,24 @@
+using System.Collections.Generic;
 using MiniBank.Core.Entities.BE.Implementations;
 using MiniBank.Core.Entities.BE.Interfaces;
 using Xunit;
 
-namespace MiniBank.Infrastructure.UnitTests.BE
+namespace MiniBank.Infrastructure.UnitTests.BETests
 {
     public class CustomerTest
     {
         [Fact]
-        public void CustomerNumberSetGetTest()
+        public void CustomerIdSetGetTest()
         {
             //Arrange 
             ICustomer customer = new Customer();
             int expectedCustomerNumber = 1;
 
             //Act 
-            customer.CustomerNumber = expectedCustomerNumber;
+            customer.CustomerId = expectedCustomerNumber;
 
             //Assert
-            Assert.Equal(expectedCustomerNumber, customer.CustomerNumber);
+            Assert.Equal(expectedCustomerNumber, customer.CustomerId);
         }
 
         [Fact]
@@ -74,6 +75,20 @@ namespace MiniBank.Infrastructure.UnitTests.BE
 
             //Assert
             Assert.Equal(expectedEmail, customer.Email);
+        }
+
+        [Fact]
+        public void CustomerBankAccountsSetGetTest()
+        {
+            //Arrange 
+            ICustomer customer = new Customer();
+            IList<CustomerBankAccount> expectedCustomerBankAccounts = new List<CustomerBankAccount>();
+
+            //Act 
+            customer.CustomerBankAccounts = expectedCustomerBankAccounts;
+
+            //Assert
+            Assert.Equal(expectedCustomerBankAccounts, customer.CustomerBankAccounts);
         }
 
     }

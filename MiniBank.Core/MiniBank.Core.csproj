@@ -8,10 +8,4 @@
     <ProjectReference Include="..\BE\MiniBank.Core.Entities.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="ApplicationService\Implementations\" />
-    <Folder Include="ApplicationService\Interfaces\" />
-    <Folder Include="DomainService\" />
-  </ItemGroup>
-
 </Project>

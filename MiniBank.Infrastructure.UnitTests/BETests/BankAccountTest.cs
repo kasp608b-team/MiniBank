@@ -1,23 +1,24 @@
+using System.Collections.Generic;
 using MiniBank.Core.Entities.BE.Implementations;
 using MiniBank.Core.Entities.BE.Interfaces;
 using Xunit;
 
-namespace MiniBank.Infrastructure.UnitTests.BE
+namespace MiniBank.Infrastructure.UnitTests.BETests
 {
     public class BankAccountTest
     {
         [Fact]
-        public void AccountNumberSetGetTest()
+        public void BankAccountIdSetGetTest()
         {
             //Arrange 
             IBankAccount bankAccount = new BankAccount();
-            int expectedAccountNumber = 1;
+            int expectedBankAccountId = 1;
 
             //Act 
-            bankAccount.AccountNumber = expectedAccountNumber;
+            bankAccount.BankAccountId = expectedBankAccountId;
 
             //Assert
-            Assert.Equal(expectedAccountNumber, bankAccount.AccountNumber);
+            Assert.Equal(expectedBankAccountId, bankAccount.BankAccountId);
         }
 
         [Fact]
@@ -46,6 +47,21 @@ namespace MiniBank.Infrastructure.UnitTests.BE
 
             //Assert
             Assert.Equal(expectedBalance, bankAccount.Balance);
+        }
+
+
+        [Fact]
+        public void CustomerBankAccountsSetGetTest()
+        {
+            //Arrange 
+            IBankAccount bankAccount = new BankAccount();
+            IList<CustomerBankAccount> expectedBankAccounts = new List<CustomerBankAccount>();
+
+            //Act 
+            bankAccount.CustomerBankAccounts = expectedBankAccounts;
+
+            //Assert
+            Assert.Equal(expectedBankAccounts, bankAccount.CustomerBankAccounts);
         }
     }
 }
