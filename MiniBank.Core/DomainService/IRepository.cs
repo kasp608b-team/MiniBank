@@ -2,11 +2,11 @@
 
 namespace MiniBank.Core.DomainService
 {
-    public interface IRepository<t>
+    public interface IRepository<k , t>
     {
         public t Add(t obj);
-        public IEnumerable<t> GetAll();
-        public t GetById(int id);
+        public List<t> GetAll();
+        public t GetById(k id);
         public t Update(t obj);
         public t Remove(t obj);
     }
