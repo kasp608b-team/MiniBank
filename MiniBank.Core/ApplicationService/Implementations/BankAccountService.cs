@@ -7,6 +7,7 @@ using MiniBank.Core.Entities.BE.Interfaces;
 
 namespace MiniBank.Core.ApplicationService.Implementations
 {
+    //Sklep
     public class BankAccountService : IBankAccountService
     {
         private readonly IRepository<int , IBankAccount> _repository;
