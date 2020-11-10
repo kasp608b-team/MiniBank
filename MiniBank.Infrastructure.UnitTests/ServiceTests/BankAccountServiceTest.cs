@@ -122,6 +122,17 @@ namespace MiniBank.Infrastructure.UnitTests.ServiceTests
         [Fact]
         public void GetByIdTest()
         {
+            IBankAccount acc2 = new BankAccount { BankAccountId = 2, Balance = 110 };
+
+            IRepository<int, IBankAccount> repo = repoMock.Object;
+            IBankAccountService bankAccountService = new BankAccountService(repo);
+
+            // act
+            bankAccountService.Add(acc2);
+
+            Assert.True(dataStore.Count == 2);
+            Assert.Equal(acc2, bankAccountService.GetById(2));
+
 
         }
 
