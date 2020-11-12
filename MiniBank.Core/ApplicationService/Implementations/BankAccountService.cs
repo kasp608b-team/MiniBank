@@ -7,7 +7,7 @@ using MiniBank.Core.Entities.BE.Interfaces;
 
 namespace MiniBank.Core.ApplicationService.Implementations
 {
-    //Korp
+    //Dumbest feature in the world
     public class BankAccountService : IBankAccountService
     {
         private readonly IRepository<int , IBankAccount> _repository;
