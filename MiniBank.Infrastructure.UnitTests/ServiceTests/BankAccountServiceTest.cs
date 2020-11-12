@@ -119,6 +119,7 @@ namespace MiniBank.Infrastructure.UnitTests.ServiceTests
 
         }
 
+        //[Fact]
         //public void GetByIdTest()
         //{
         //    IBankAccount acc2 = new BankAccount { BankAccountId = 2, Balance = 110 };
