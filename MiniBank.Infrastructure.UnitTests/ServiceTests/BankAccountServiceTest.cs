@@ -130,7 +130,6 @@ namespace MiniBank.Infrastructure.UnitTests.ServiceTests
             // act
             bankAccountService.Add(acc2);
 
-            Assert.True(dataStore.Count == 2);
             Assert.Equal(acc2, bankAccountService.GetById(2));
 
 

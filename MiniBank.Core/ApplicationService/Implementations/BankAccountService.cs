@@ -37,7 +37,7 @@ namespace MiniBank.Core.ApplicationService.Implementations
 
         public IBankAccount GetById(int id)
         {
-            throw new NotImplementedException();
+            return _repository.GetById(id);
         }
 
         public IBankAccount Update(IBankAccount obj)
