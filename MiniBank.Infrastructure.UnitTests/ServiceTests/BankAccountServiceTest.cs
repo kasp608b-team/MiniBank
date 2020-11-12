@@ -128,13 +128,12 @@ namespace MiniBank.Infrastructure.UnitTests.ServiceTests
             IBankAccountService bankAccountService = new BankAccountService(repo);
 
             // act
-            bankAccountService.Add(acc2);
+           bankAccountService.Add(acc2);
 
 
             Assert.Equal(acc2, bankAccountService.GetById(2));
 
-
-        }
+       }
 
         [Fact]
         public void UpdateTest()
